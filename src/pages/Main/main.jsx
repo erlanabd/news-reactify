@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { getNews } from "../../api/apiNews";
-import NewsBanner from "../../components/newsBanner/news.banner";
+import NewsBanner from "../../components/NewsBanner/news.banner";
 import NewsList from "../../components/NewsList/image";
 
 const Main = () => {
