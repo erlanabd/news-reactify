@@ -1,4 +1,4 @@
-import NewsItem from "../NewsItem/news.banner";
+import NewsItem from "../NewsItem/news.item";
 import styles from "./styles.module.scss";
 
 const NewsList = ({ news }) => {

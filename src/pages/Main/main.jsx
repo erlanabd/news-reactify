@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { getNews } from "../../api/apiNews";
 import NewsBanner from "../../components/NewsBanner/news.banner";
-import NewsList from "../../components/NewsList/image";
+import NewsList from "../../components/NewsList/news.list";
 
 const Main = () => {
   const [news, setNews] = useState([]);
