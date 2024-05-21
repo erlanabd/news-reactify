@@ -1,15 +1,12 @@
-import BannersListWithSkeleton from "@/widgets/news/ui/BannersList/bannersList";
 import { useGetLatestNewsQuery } from "@/entities/news/api/newsApi";
 import styles from "./styles.module.scss";
+import { NewsList } from "@/widgets/news";
 
 const LatestNews = () => {
   const { data, isLoading } = useGetLatestNewsQuery(null);
   return (
     <section className={styles.section}>
-      <BannersListWithSkeleton
-        banners={data && data.news}
-        isLoading={isLoading}
-      />
+      <NewsList type="banner" direction="row" news={data && data.news} isLoading={isLoading} />
     </section>
   );
 };
