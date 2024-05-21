@@ -3,13 +3,15 @@ import { formatTimeAgo } from "@/shared/helpers/formatTimeAgo";
 
 import styles from "./styles.module.scss";
 import Image from "@/shared/ui/Image/image";
+import { ReactNode } from "react";
 
 interface Props {
   item: INews;
   type: "banner" | "item";
+  viewNewsSlot?: (news: INews) => ReactNode;
 }
 
-const NewsCard = ({ item, type = "item" }: Props) => {
+const NewsCard = ({ item, type = "item", viewNewsSlot }: Props) => {
   return (
     <li className={`${styles.card} ${type === "banner" && styles.banner}`}>
       {type === "banner" ? (
@@ -27,6 +29,8 @@ const NewsCard = ({ item, type = "item" }: Props) => {
           {formatTimeAgo(item.published)} by {item.author}
         </p>
       </div>
+
+      {viewNewsSlot ? viewNewsSlot(item) : null}
     </li>
   );
 };
